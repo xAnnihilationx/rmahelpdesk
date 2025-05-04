@@ -22,19 +22,19 @@ This application helps businesses manage the complete RMA lifecycle:
 
 ## RMA Status 
 
-Submitted - Initial report received from customer
-Verification - Gathering invoice and serial number
-Pending RMA - Awaiting manufacturer's RMA number
-RMA Approved - RMA number received from manufacturer
-Label Generated - Shipping label created and sent to customer
-In Transit to Manufacturer - Customer has shipped the item
-Received by Manufacturer - Manufacturer confirmed receipt
-Replacement Shipped - Manufacturer has sent replacement
-In Transit to Customer - Replacement on its way
-Delivered - Replacement received by customer
-Completed - Process finished successfully
-Cancelled - Process terminated (for any reason)
-On Hold - Process temporarily paused (needs additional information)
+* Submitted - Initial report received from customer
+* Verification - Gathering invoice and serial number
+* Pending RMA - Awaiting manufacturer's RMA number
+* RMA Approved - RMA number received from manufacturer
+* Label Generated - Shipping label created and sent to customer
+* In Transit to Manufacturer - Customer has shipped the item
+* Received by Manufacturer - Manufacturer confirmed receipt
+* Replacement Shipped - Manufacturer has sent replacement
+* In Transit to Customer - Replacement on its way
+* Delivered - Replacement received by customer
+* Completed - Process finished successfully
+* Cancelled - Process terminated (for any reason)
+* On Hold - Process temporarily paused (needs additional information)
 
 ## Quick Start
 
