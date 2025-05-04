@@ -1,14 +1,18 @@
 FROM node:23
-RUN mkdir -p /rmahelpdesk
+
+# Create app directory
 WORKDIR /rmahelpdesk
 
+# Copy package files first (for better layer caching)
+COPY package*.json ./
 
-
-COPY package.json /rmahelpdesk
-COPY package-lock.json /rmahelpdesk
+# Install dependencies
 RUN npm install
 
-COPY . /rmahelpdesk
+# Copy the rest of the application code
+# (This will respect .dockerignore)
+COPY . .
+
 EXPOSE 3000
 
 CMD ["npm", "run", "dev"]

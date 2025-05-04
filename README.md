@@ -7,6 +7,10 @@ Next js is in development mode and mongo db has no authentication so don't use t
 podman compose up -d
 ```
 
+Mogodb needs a database named rmadb
+
+.env contains database endpoint 
+
 mogo express is at 
 http://localhost:8081/
 
