@@ -15,7 +15,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <nav className="flex justify-between items-center">
               <Link href="/" className="text-2xl font-bold">RMA Help Desk</Link>
               <div>
-                <Link href="/add-ticket" className="hover:underline">New Ticket</Link>
+                <Link href="/add-ticket" className="hover:underline p-8">New Ticket</Link>
+                <Link href="/api/tickets" className="hover:underline p-8">View Tickets</Link>
+
               </div>
             </nav>
           </div>

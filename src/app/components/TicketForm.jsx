@@ -12,8 +12,12 @@ const TicketForm = () => {
   const [formData, setFormData] = useState({
     customerName: '',
     productName: '',
+    invoice: '',
+    manufaturerTracking: '',
+    customerTracking: '',
+    manufactureRMA: '',
     issue: '',
-    status: 'open',
+    status: 'submitted',
     notes: ''
   });
 
@@ -72,7 +76,7 @@ const TicketForm = () => {
       
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
-          <label htmlFor="customerName" className="block text-sm font-medium text-gray-700 mb-1">
+          <label htmlFor="customerName" className="block text-sm font-medium  text-white mb-1">
             Customer Name *
           </label>
           <input
@@ -87,7 +91,7 @@ const TicketForm = () => {
         </div>
         
         <div>
-          <label htmlFor="productName" className="block text-sm font-medium text-gray-700 mb-1">
+          <label htmlFor="productName" className="block text-sm font-medium  text-white mb-1">
             Product Name *
           </label>
           <input
@@ -102,7 +106,7 @@ const TicketForm = () => {
         </div>
         
         <div>
-          <label htmlFor="issue" className="block text-sm font-medium text-gray-700 mb-1">
+          <label htmlFor="issue" className="block text-sm font-medium  text-white mb-1">
             Issue Description *
           </label>
           <textarea
@@ -115,27 +119,88 @@ const TicketForm = () => {
             required
           />
         </div>
-        
         <div>
-          <label htmlFor="status" className="block text-sm font-medium text-gray-700 mb-1">
+            <label htmlFor="invoice" className="block text-sm font-medium  text-white mb-1">
+                Invoice Number
+            </label>
+            <input 
+                type="text"
+                id="invoice"
+                name="invoice"
+                value={formData.invoice}
+                onChange={handleChange}
+                className="w-full px-3 py-2 border border-gray-300 rounded-md"
+            />
+        </div>
+        <div>
+            <label htmlFor="manufactureTracking" className="block text-sm font-medium  text-white mb-1">
+                Manufacturer Tracking Number    
+            </label>
+            <input
+                type="text"
+                id="manufactureTracking"
+                name="manufactureTracking"
+                value={formData.manufactureTracking}
+                onChange={handleChange}
+                className="w-full px-3 py-2 border border-gray-300 rounded-md"
+        
+            />
+        </div>
+        <div>
+            <label htmlFor="customerTracking" className="block text-sm font-medium  text-white mb-1">
+                Customer Tracking Number
+            </label>
+            <input
+                type="text"
+                id="customerTracking"
+                name="customerTracking"
+                value={formData.customerTracking}
+                onChange={handleChange}
+                className="w-full px-3 py-2 border border-gray-300 rounded-md"
+            />
+        </div>
+        <div>
+            <label htmlFor="manufactureRMA" className="block text-sm font-medium  text-white mb-1">
+                Manufacturer RMA Number
+            </label>
+            <input
+                type="text"
+                id="manufactureRMA"
+                name="manufactureRMA"
+                value={formData.manufactureRMA}
+                onChange={handleChange}
+                className="w-full px-3 py-2 border border-gray-300 rounded-md"
+            />
+        </div>
+        <div>
+          <label htmlFor="status" className="block text-sm font-medium text-white mb-1">
             Status
           </label>
-          <select
-            id="status"
-            name="status"
-            value={formData.status}
-            onChange={handleChange}
-            className="w-full px-3 py-2 border border-gray-300 rounded-md"
-          >
-            <option value="open">Open</option>
-            <option value="in-progress">In Progress</option>
-            <option value="resolved">Resolved</option>
-            <option value="closed">Closed</option>
-          </select>
+      <select
+        id="status"
+        name="status"
+        value={formData.status}
+        onChange={handleChange}
+        className="w-full px-3 py-2 border border-gray-300 rounded-md text-black"
+      >
+        <option value="submitted">Submitted - Initial report received</option>
+        <option value="verification">Verification - Gathering documentation</option>
+        <option value="pending-rma">Pending RMA - Awaiting manufacturer's RMA number</option>
+        <option value="rma-approved">RMA Approved - RMA number received</option>
+        <option value="label-generated">Label Generated - Shipping label created</option>
+        <option value="in-transit-to-mfg">In Transit to Manufacturer</option>
+        <option value="received-by-mfg">Received by Manufacturer</option>
+        <option value="replacement-shipped">Replacement Shipped</option>
+        <option value="in-transit-to-customer">In Transit to Customer</option>
+        <option value="delivered">Delivered - Received by customer</option>
+        <option value="completed">Completed - Process finished</option>
+        <option value="cancelled">Cancelled - Process terminated</option>
+        <option value="on-hold">On Hold - Process paused</option>
+      </select>
         </div>
         
         <div>
-          <label htmlFor="notes" className="block text-sm font-medium text-gray-700 mb-1">
+          <label htmlFor="notes" className="block text-sm font-medium  text-white mb-1">
             Additional Notes
           </label>
           <textarea
